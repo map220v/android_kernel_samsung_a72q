@@ -183,8 +183,9 @@ struct sec_bat_pdic_info {
 #endif
 };
 
+#define MAX_PDO_NUM 8
 struct sec_bat_pdic_list {
-	struct sec_bat_pdic_info pd_info[8]; /* 5V ~ 12V */
+	struct sec_bat_pdic_info pd_info[MAX_PDO_NUM]; /* 5V ~ 12V */
 	unsigned int now_pd_index;
 	unsigned int max_pd_count;
 #if defined(CONFIG_PDIC_PD30)
@@ -286,6 +287,8 @@ struct sec_battery_info {
 	struct pdic_notifier_struct pdic_info;
 	struct sec_bat_pdic_list pd_list;
 #endif
+	bool update_pd_list;
+
 #if defined(CONFIG_VBUS_NOTIFIER)
 	struct notifier_block vbus_nb;
 	int muic_vbus_status;
