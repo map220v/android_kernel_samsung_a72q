@@ -5,6 +5,8 @@ SUBLEVEL = 190
 EXTRAVERSION =
 NAME = Petit Gorille
 
+export DTC_EXT=$(KBUILD_SRC)/tools/dtc
+
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
 # More info can be located in ./README
